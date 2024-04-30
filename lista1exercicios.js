@@ -43,3 +43,27 @@ let percentualVotosValidos = (quantidadeVotosValidos * 100) / quantidadeEleitore
 console.log (`Obteve-se o valor de ${percentualVotosBrancos}% de votos em branco.`);
 console.log (`Obteve-se o valor de ${percentualVotosNulos}% de votos em nulos.`);
 console.log (`Obteve-se o valor de ${percentualVotosValidos}% de votos em válidos.`);
+
+/*
+    Faça um algoritmo que leia quatro números inteiros e realize as seguintes operações:
+        ● Some 25 ao primeiro inteiro;
+        ● Triplique o valor do segundo inteiro;
+        ● Modifique o valor do terceiro inteiro para 12% do valor original;
+        ● Armazene no quarto inteiro a soma dos valores originais (os que o usuário digitou)
+          dos primeiros três inteiros.
+*/
+
+let primeiroNumero = parseInt(prompt("Digite um número inteiro: "));
+let segundoNumero = parseInt(prompt("Digite o segundo número inteiro: "));
+let terceiroNumero = parseInt(prompt("Digite o terceiro número inteiro: "));
+let quartoNumero = parseInt(prompt("Digite o quarto número inteiro: "));
+
+let calculoPrimeiroNumero = primeiroNumero + 25;
+let calculoSegundoNumero = segundoNumero * 3;
+let calculoTerceiroNumero = terceiroNumero * 0.12;
+let calculoQuartoNumero = primeiroNumero + segundoNumero + terceiroNumero + quartoNumero;
+
+console.log(calculoPrimeiroNumero);
+console.log(calculoSegundoNumero);
+console.log(calculoTerceiroNumero);
+console.log(calculoQuartoNumero);
