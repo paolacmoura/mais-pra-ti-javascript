@@ -44,6 +44,7 @@ console.log (`Obteve-se o valor de ${percentualVotosBrancos}% de votos em branco
 console.log (`Obteve-se o valor de ${percentualVotosNulos}% de votos em nulos.`);
 console.log (`Obteve-se o valor de ${percentualVotosValidos}% de votos em válidos.`);
 
+
 /*
     Faça um algoritmo que leia quatro números inteiros e realize as seguintes operações:
         ● Some 25 ao primeiro inteiro;
@@ -68,10 +69,13 @@ console.log(calculoSegundoNumero);
 console.log(calculoTerceiroNumero);
 console.log(calculoQuartoNumero);
 
-    /*Escreva um algoritmo para ler as notas das duas avaliações de um aluno no semestre,
+
+/*
+    Escreva um algoritmo para ler as notas das duas avaliações de um aluno no semestre,
     calcular e escrever a média semestral e a seguinte mensagem: ‘PARABÉNS! Você foi
     aprovado’, somente se o aluno foi aprovado (considere 6.0 a nota mínima para
-    aprovação).*/
+    aprovação).
+*/
 
 let primeiraNota = parseFloat(prompt("Digite a primeira nota: "));
 let segundaNota = parseFloat(prompt("Digite a segunda nota: "));
@@ -79,5 +83,15 @@ let segundaNota = parseFloat(prompt("Digite a segunda nota: "));
 let mediaSemestre = (primeiraNota + segundaNota) / 2;
 
 if (mediaSemestre >= 6){
-    console.log ("PARABÉNS! Você foi aprovado");
+    console.log("PARABÉNS! Você foi aprovado");
+}
+
+
+/*
+    Acrescente ao exercício acima a mensagem ‘Você foi REPROVADO! Estude mais’ caso a
+    média calculada seja menor que 6,0
+*/
+
+if (mediaSemestre < 6){
+    console.log("Você foi REPROVADO! Estude mais");
 }
