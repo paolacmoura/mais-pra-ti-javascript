@@ -8,3 +8,38 @@ const prompt = require('prompt-sync')();
 let temperaturaCelsius = prompt("Digite uma temperatura em Celsius: ");
 let resultado = temperaturaCelsius * 1.8 + 32;
 console.log(`O resultado de ${temperaturaCelsius}ºC em Fahrenheit é ${resultado}ºF`);
+
+
+/*
+    Escreva um algoritmo para ler o número de eleitores de um município, o número de
+    votos brancos, nulos e válidos. Calcular e escrever o percentual que cada um representa
+    em relação ao total de eleitores.
+*/
+
+let quantidadeEleitores = prompt("Insira a quantidade total de eleitores: ");
+let quantidadeVotosBrancos = prompt("Insira a quantidade de votos brancos: ");
+let quantidadeVotosNulos = prompt("Insira a quantidade de votos nulos: ");
+let quantidadeVotosValidos = prompt("Insira a quantidade de votos válidos: ");
+
+while(!(quantidadeEleitores > 0) || !(quantidadeVotosBrancos >= 0) || !(quantidadeVotosNulos >= 0) || !(quantidadeVotosValidos >= 0)){
+    if (quantidadeEleitores <= 0) {
+        quantidadeEleitores = prompt("Quantidade de eleitores é inválida, insira um valor maior que zero: ");
+    }
+    if (quantidadeVotosBrancos < 0) {
+        quantidadeVotosBrancos = prompt("Quantidade de votos brancos é inválida, insira um valor igual ou maior que zero: ");
+    }
+    if (quantidadeVotosNulos < 0) {
+        quantidadeVotosNulos = prompt("Quantidade de votos nulos é inválida, insira um valor igual ou maior que zero: ");
+    }
+    if (quantidadeVotosValidos < 0) {
+        quantidadeVotosValidos = prompt("Quantidade de votos válidos é inválida, insira um valor igual ou maior que zero: ");
+    }
+}
+
+let percentualVotosBrancos = (quantidadeVotosBrancos * 100) / quantidadeEleitores;
+let percentualVotosNulos = (quantidadeVotosNulos * 100) / quantidadeEleitores;
+let percentualVotosValidos = (quantidadeVotosValidos * 100) / quantidadeEleitores;
+
+console.log (`Obteve-se o valor de ${percentualVotosBrancos}% de votos em branco.`);
+console.log (`Obteve-se o valor de ${percentualVotosNulos}% de votos em nulos.`);
+console.log (`Obteve-se o valor de ${percentualVotosValidos}% de votos em válidos.`);
