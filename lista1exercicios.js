@@ -95,3 +95,51 @@ if (mediaSemestre >= 6){
 if (mediaSemestre < 6){
     console.log("Você foi REPROVADO! Estude mais");
 }
+
+/*    
+    Ler três valores para os lados de um triângulo: A, B e C. Verificar se os lados fornecidos
+    formam realmente um triângulo. Caso forme, deve ser indicado o tipo de triângulo:
+    Isósceles, escaleno ou eqüilátero.
+    Para verificar se os lados fornecidos formam triângulo: A < B + C e B < A + C e C < A + B
+    Triângulo isósceles: possui dois lados iguais (A=B ou A=C ou B = C)
+    Triângulo escaleno: possui todos os lados diferentes (A<>B e B <> C)
+    Triângulo eqüilátero: possui todos os lados iguais (A=B e B=C)
+*/
+
+let valorLadoA = parseFloat(prompt("Digite um valor para o lado A: "));
+let valorLadoB = parseFloat(prompt("Digite um valor para o lado B: "));
+let valorLadoC = parseFloat(prompt("Digite um valor para o lado C: "));
+
+function isTriangulo(a, b, c){
+    if((a + b) > c && (b + c) > a && (a + c) > b){
+        return true
+    }
+    
+    return false    
+}
+
+function verificaEquilatero(a, b, c) {
+    if(a === b && b === c) {
+       console.log("O triângulo é equilátero")
+    }
+}
+
+function verificaIsosceles(a, b, c) {
+    if(a === b || b === c || a === c){
+        console.log("O triângulo é isósceles")
+    }
+}
+
+function verificaEscaleno(a, b, c) {
+    if(a !== b && b !== c && a !== c){
+        console.log("O triângulo é escaleno")
+    }
+}
+
+if (isTriangulo(valorLadoA, valorLadoB, valorLadoC)){
+    verificaEquilatero(valorLadoA, valorLadoB, valorLadoC)
+    verificaIsosceles(valorLadoA, valorLadoB, valorLadoC)
+    verificaEscaleno(valorLadoA, valorLadoB, valorLadoC)
+} else {
+    console.log("As medidas A, B e C não formam um triângulo.")
+}
