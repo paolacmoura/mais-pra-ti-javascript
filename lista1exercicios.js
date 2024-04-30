@@ -161,3 +161,23 @@ function calculaValor(quantidade){
     }
 }
 console.log(`Valor total da compra: R$${calculaValor(quantidadeMacas)}`);
+
+
+/* 
+    Escreva um algoritmo para ler 2 valores (considere que não serão lidos valores iguais)
+    e escreve-los em ordem crescente. 
+*/
+
+let primeiroNumero = parseFloat(prompt("Digite um número: "));
+let segundoNumero = parseFloat(prompt("Digite outro número: "));
+
+while(primeiroNumero === segundoNumero){
+    primeiroNumero = prompt("Os números precisam ser diferentes. Digite o primeiro número novamente: ");
+    segundoNumero = prompt("Digite o segundo número: ");
+}
+
+if(primeiroNumero < segundoNumero){
+    console.log(primeiroNumero + " " + segundoNumero);
+} else{
+    console.log(segundoNumero + " " + primeiroNumero);
+}
