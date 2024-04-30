@@ -67,3 +67,17 @@ console.log(calculoPrimeiroNumero);
 console.log(calculoSegundoNumero);
 console.log(calculoTerceiroNumero);
 console.log(calculoQuartoNumero);
+
+    /*Escreva um algoritmo para ler as notas das duas avaliações de um aluno no semestre,
+    calcular e escrever a média semestral e a seguinte mensagem: ‘PARABÉNS! Você foi
+    aprovado’, somente se o aluno foi aprovado (considere 6.0 a nota mínima para
+    aprovação).*/
+
+let primeiraNota = parseFloat(prompt("Digite a primeira nota: "));
+let segundaNota = parseFloat(prompt("Digite a segunda nota: "));
+
+let mediaSemestre = (primeiraNota + segundaNota) / 2;
+
+if (mediaSemestre >= 6){
+    console.log ("PARABÉNS! Você foi aprovado");
+}
