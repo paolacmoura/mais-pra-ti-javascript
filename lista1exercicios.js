@@ -96,6 +96,7 @@ if (mediaSemestre < 6){
     console.log("Você foi REPROVADO! Estude mais");
 }
 
+
 /*    
     Ler três valores para os lados de um triângulo: A, B e C. Verificar se os lados fornecidos
     formam realmente um triângulo. Caso forme, deve ser indicado o tipo de triângulo:
@@ -114,7 +115,6 @@ function isTriangulo(a, b, c){
     if((a + b) > c && (b + c) > a && (a + c) > b){
         return true
     }
-    
     return false    
 }
 
@@ -143,3 +143,21 @@ if (isTriangulo(valorLadoA, valorLadoB, valorLadoC)){
 } else {
     console.log("As medidas A, B e C não formam um triângulo.")
 }
+
+
+/* 
+    As maçãs custam R$ 0,30 se forem compradas menos do que uma dúzia, e R$ 0,25 se
+    forem compradas pelo menos doze. Escreva um algoritmo que leia o número de maçãs
+    compradas, calcule e escreva o valor total da compra.
+ */
+
+let quantidadeMacas = parseFloat(prompt("Quantidade de maçãs desejadas: "));
+
+function calculaValor(quantidade){
+    if(quantidade < 12){
+        return (quantidade * 0.3).toFixed(2);
+    } else{
+        return (quantidade * 0.25).toFixed(2);
+    }
+}
+console.log(`Valor total da compra: R$${calculaValor(quantidadeMacas)}`);
