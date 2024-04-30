@@ -181,3 +181,31 @@ if(primeiroNumero < segundoNumero){
 } else{
     console.log(segundoNumero + " " + primeiroNumero);
 }
+
+
+/* 
+    Escreva um algoritmo que leia o código de origem de um produto e imprima a região
+    do mesmo, conforme a tabela.
+*/
+
+let codigoOrigem = parseInt(prompt("Digite o código de origem do produto: "));
+
+if (codigoOrigem === 1){
+    console.log("Produto da região Sul");
+} else if (codigoOrigem === 2){
+    console.log("Produto da região Norte");
+} else if (codigoOrigem === 3){
+    console.log("Produto da região Leste");
+} else if (codigoOrigem === 4){
+    console.log("Produto da região Oeste");
+} else if (codigoOrigem === 5 || codigoOrigem === 6){
+    console.log("Produto da região Nordeste");
+} else if (codigoOrigem === 7 || codigoOrigem === 8 || codigoOrigem === 9){
+    console.log("Produto da região Sudeste");
+} else if (codigoOrigem >= 10 && codigoOrigem <= 20){
+    console.log("Produto da região Centro-Oeste");
+} else if (codigoOrigem >= 25 && codigoOrigem <= 50){
+    console.log("Produto da região Nordeste");
+} else {
+    console.log("Produto importado");
+}
