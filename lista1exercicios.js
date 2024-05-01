@@ -283,3 +283,22 @@ geraResultados(segundoNumero);
 geraResultados(terceiroNumero);
 geraResultados(quartoNumero);
 geraResultados(quintoNumero);
+
+
+/* 
+    Fazer um algoritmo para receber números decimais até que o usuário digite 0 e fazer
+    a média aritmética desses números. 
+*/
+
+let numeroDecimal = parseFloat(prompt("Insira um número decimal: "));
+let i = 1;
+let soma = 0;
+
+while(numeroDecimal !== 0){
+    soma += numeroDecimal;
+    numeroDecimal = parseFloat(prompt("Insira um número decimal: "));
+    if(numeroDecimal !== 0){
+        i++;
+    }
+}
+console.log(`A média dos números digitados é: ${soma / i}`);
