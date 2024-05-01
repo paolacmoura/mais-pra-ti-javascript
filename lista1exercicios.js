@@ -302,3 +302,25 @@ while(numeroDecimal !== 0){
     }
 }
 console.log(`A média dos números digitados é: ${soma / i}`);
+
+
+/* 
+    Fazer um algoritmos para receber um número decimal e o peso de cada número até
+    que o usuário digite o número 0. Fazer a média ponderada desses números e pesos
+    respectivos. 
+*/
+
+let numero = parseFloat(prompt("Digite um número: "));
+let peso = parseFloat(prompt("Digite um peso: "));
+let somaPN = 0;
+let somaP = 0;
+
+while(numero !== 0){
+    somaPN += (numero*peso);
+    somaP += peso;
+    numero = parseFloat(prompt("Digite um número: "));
+    if(numero !== 0){
+        peso = parseFloat(prompt("Digite um peso: "));
+    }
+}
+console.log(`A média ponderada é: ${somaPN / somaP}`);
