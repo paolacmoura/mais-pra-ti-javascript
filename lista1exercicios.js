@@ -220,3 +220,22 @@ let numero = parseInt(prompt("Digite um número: "));
 for (let i = 0; i < 10; i ++){
     console.log(numero);
 }
+
+
+/*
+    Escreva um algoritmo para ler uma quantidade indeterminada de valores inteiros. Para
+    cada valor fornecido escrever uma mensagem que indica se cada valor fornecido é PAR
+    ou ÍMPAR. O algoritmo será encerrado imediatamente após a leitura de um valor NULO ou
+    NEGATIVO.
+*/
+
+let insiraNumero = parseInt(prompt("Insira um número: "));
+
+while(insiraNumero === null || insiraNumero > 0){
+    if(insiraNumero % 2 === 0){
+        console.log(`O número ${insiraNumero} é par.`);
+    } else {
+        console.log(`O número ${insiraNumero} é ímpar.`);
+    }
+    insiraNumero = parseInt(prompt("Insira um número: "));
+}
