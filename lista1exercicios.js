@@ -324,3 +324,36 @@ while(numero !== 0){
     }
 }
 console.log(`A média ponderada é: ${somaPN / somaP}`);
+
+
+/*
+    Escreva um algoritmo para imprimir os 50 primeiros número primos maior que 100.
+    Obs.: Número primo é aquele divisível somente por 1 e ele mesmo.
+*/
+
+function isPrimo(numero) {
+    let divisor = 2;
+    while(divisor < numero) {
+        if (numero % divisor == 0) {
+           return false
+        }
+
+        divisor++;
+    }
+    return true
+}
+
+var numerosPrimos = [];
+let i = 100;
+
+while(numerosPrimos.length !== 50) {
+    isPrimo(i) ? numerosPrimos.push(i) : null;
+
+    i++;
+}
+
+console.log("Os 50 números primos acima de 100 são: ")
+
+for(let item of numerosPrimos){
+    console.log(item)
+}
