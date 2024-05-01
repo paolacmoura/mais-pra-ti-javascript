@@ -251,3 +251,35 @@ for(let i = 1000; i < 2000; i++){
         console.log(i);
     }
 }
+
+
+/* 
+    Escrever um algoritmo que leia 5 valores para uma variável N e, para cada um deles,
+    calcule e mostre a tabuada de 1 até N. Mostre a tabuada na forma:
+    1 x N = N
+    2 x N = 2N
+    3 x N = 3N 
+*/
+
+let primeiroNumero = parseInt(prompt("Insira o primeiro número: "));
+let segundoNumero = parseInt(prompt("Insira o segundo número: "));
+let terceiroNumero = parseInt(prompt("Insira o terceiro número: "));
+let quartoNumero = parseInt(prompt("Insira o quarto número: "));
+let quintoNumero = parseInt(prompt("Insira o quinto número: "));
+
+function calculaTabuada(numero) {
+    for (let i = 1; i <= numero; i++) {
+        console.log(`${i} x ${numero} = ${i * numero}`);
+    }
+}
+
+function geraResultados(numero) {
+    console.log(`Tabuada número ${numero}:`);
+    calculaTabuada(numero);
+}
+
+geraResultados(primeiroNumero);
+geraResultados(segundoNumero);
+geraResultados(terceiroNumero);
+geraResultados(quartoNumero);
+geraResultados(quintoNumero);
