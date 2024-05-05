@@ -19,3 +19,21 @@ let minutosPerdidos = (quantidadeCigarrosFumados * MINUTOS_PERDIDOS_POR_CIGARRO)
 let quantidadeDiasPerdidos = (minutosPerdidos / MINUTOS_EM_UM_DIA);
 
 console.log(`Você perdeu ${quantidadeDiasPerdidos.toFixed(2)} dias de vida`);
+
+
+/*
+    Escreva um programa que pergunte a velocidade de um carro. 
+    Caso ultrapasse 80 Km/h, exiba uma mensagem dizendo que o usuário foi multado. 
+    Nesse caso, exiba o valor da multa, cobrando R$ 5,00 por cada Km acima da velocidade permitida.
+*/
+
+
+const VELOCIDADE_PERMITIDA = 80;
+const MULTA_POR_KM_EXCEDIDO = 5;
+
+let velocidadeVeiculo = parseInt(prompt("Insira a velocidade do veículo: "));
+let diferencaVelocidade = (velocidadeVeiculo - VELOCIDADE_PERMITIDA);
+
+diferencaVelocidade > 0 
+    ? console.log(`Você foi multado! Valor da multa R$${(diferencaVelocidade * MULTA_POR_KM_EXCEDIDO).toFixed(2)}`)
+    : console.log("Você não foi multado!");
