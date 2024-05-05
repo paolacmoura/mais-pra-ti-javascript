@@ -37,3 +37,23 @@ let diferencaVelocidade = (velocidadeVeiculo - VELOCIDADE_PERMITIDA);
 diferencaVelocidade > 0 
     ? console.log(`Você foi multado! Valor da multa R$${(diferencaVelocidade * MULTA_POR_KM_EXCEDIDO).toFixed(2)}`)
     : console.log("Você não foi multado!");
+
+
+/*
+    Faça um algoritmo que pergunte a distância que um passageiro deseja percorrer em
+    Km. Calcule o preço da passagem, cobrando R$ 0.50 por Km para viagens até 200 Km e
+    R$ 0.45 para viagens mais longas.
+*/
+
+
+const VALOR_KM_RODADO1 = 0.50
+const VALOR_KM_RODADO2 = 0.45
+let quantidadePercorrida = parseFloat(prompt("Insira a distância em Km que deseja percorrer: "));
+let distancia1 = (quantidadePercorrida * VALOR_KM_RODADO1);
+let distancia2 = (quantidadePercorrida * VALOR_KM_RODADO2);
+
+if(quantidadePercorrida <= 200){
+    console.log(`Valor da passagem é de R$${distancia1.toFixed(2)}`);
+} else{
+    console.log(`Valor da passagem é de R$${distancia2.toFixed(2)}`);
+}
