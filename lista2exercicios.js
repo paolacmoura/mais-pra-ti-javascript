@@ -199,3 +199,52 @@ if(tipoVeiculos == 2){
         console.log(`Valor total do aluguel: R$${carroLuxoLongaDistancia(diasDeAluguel, kmPercorrido).toFixed(2)}`)
     }
 }
+
+
+/*
+    Um programa de vida saudável quer dar pontos por atividades físicas realizadas que
+    podem ser trocados por dinheiro. Cada hora de atividade física no mês vale pontos. O
+    sistema funciona assim:
+    - até 10 h de atividade no mês: ganha 2 pontos por hora
+    - de 10 h até 20 h de atividade no mês: ganha 5 pontos por hora
+    - acima de 20 h de atividade no mês: ganha 10 pontos por hora
+    - A cada ponto ganho, o cliente fatura R$ 0,05 (5 centavos)
+    Faça um programa que leia quantas horas de atividade uma pessoa teve por mês.
+    Calcule e mostre quantos pontos ela teve e quanto dinheiro ela conseguiu ganhar.
+*/
+
+
+let horasAtividadesRealizadas = parseFloat(prompt("Insira a quantidade de horas realizadas: "));
+
+function pontosNivelUm(horas){
+    return (horas * ATE_DEZ_HORAS_NO_MES)
+}
+function pontosNivelDois(horas){
+    return (horas * DEZ_A_VINTE_HORAS_NO_MES)
+}
+function pontosNivelTres(horas){
+    return (horas * ACIMA_DE_VINTE_HORAS_NO_MES)
+}
+
+function calculaNivelUm(horas){
+    return pontosNivelUm(horas) * DINHEIRO_POR_HORA_ATIVIDADE
+}
+function calculaNivelDois(horas){
+    return pontosNivelDois(horas) * DINHEIRO_POR_HORA_ATIVIDADE
+}
+function calculaNivelTres(horas){
+    return pontosNivelTres(horas) * DINHEIRO_POR_HORA_ATIVIDADE
+}
+
+if(horasAtividadesRealizadas < 10){
+    console.log(`Você atingiu ${pontosNivelUm(horasAtividadesRealizadas)} pontos`)
+    console.log(`Você ganhou R$${calculaNivelUm(horasAtividadesRealizadas).toFixed(2)}`)
+} 
+if(horasAtividadesRealizadas >= 10 && horasAtividadesRealizadas < 20){
+    console.log(`Você atingiu ${pontosNivelDois(horasAtividadesRealizadas)} pontos`)
+    console.log(`Você ganhou R$${calculaNivelDois(horasAtividadesRealizadas).toFixed(2)}`)
+}
+if(horasAtividadesRealizadas >= 20){
+    console.log(`Você atingiu ${pontosNivelTres(horasAtividadesRealizadas)} pontos`)
+    console.log(`Você ganhou R$${calculaNivelTres(horasAtividadesRealizadas).toFixed(2)}`)
+}
