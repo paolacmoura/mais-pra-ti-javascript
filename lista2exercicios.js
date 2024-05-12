@@ -145,6 +145,57 @@ do {
     if(tentativa != numeroCorreto){
         console.log("Tente outro número.")
     }
-}   
-    while (tentativa != numeroCorreto)
-        console.log("Parabéns! Você acertou.")
+} while (tentativa != numeroCorreto)
+
+console.log("Parabéns! Você acertou.");
+
+
+/*
+    Uma empresa de aluguel de carros precisa cobrar pelos seus serviços. O aluguel de um
+    carro popular custa R$ 90,00 por dia e um carro de luxo custa R$ 150,00. Além disso, o
+    cliente paga por Km percorrido. Faça um programa que leia o tipo de carro alugado
+    (popular ou luxo), quantos dias de aluguel e quantos Km foram percorridos. No final,
+    mostre o preço a ser pago de acordo com os dados a seguir:
+    Carros populares
+    - Até 100 Km percorridos: R$ 0,20 por Km
+    - Acima de 100 Km percorridos: R$ 0,10 por Km
+    Carros de luxo
+    - Até 200 Km percorridos: R$ 0,30 por Km
+    - Acima de 200 Km percorridos: R$ 0,25 por Km
+*/
+
+
+const CARRO_POPULAR = 90;
+const CARRO_LUXO = 150;
+let tipoVeiculos = prompt("Insira 1 para veículo popular e 2 para veículo de luxo: ")
+let kmPercorrido = parseInt(prompt("Insira os km percorridos com o veículo: "));
+let diasDeAluguel = parseInt(prompt("Insira quantos dias permaneceu com o veículo: "));
+
+function carroPopularCurtaDistancia(dias, km){
+    return (CARRO_POPULAR * dias) + (0.20 * km)
+} 
+function carroPopularLongaDistancia(dias, km){
+    return (CARRO_POPULAR * dias) + (0.10 * km)
+} 
+function carroLuxoCurtaDistancia(dias, km){
+    return (CARRO_LUXO * dias) + (0.30 * km)
+} 
+function carroLuxoLongaDistancia(dias, km){
+    return (CARRO_LUXO * dias) + (0.25 * km)
+} 
+
+if(tipoVeiculos == 1){
+    if(kmPercorrido <= 200){
+        console.log(`Valor total do aluguel: R$${carroPopularCurtaDistancia(diasDeAluguel, kmPercorrido).toFixed(2)}`)
+    }else{ 
+        console.log(`Valor total do aluguel: R$${carroPopularLongaDistancia(diasDeAluguel, kmPercorrido).toFixed(2)}`)
+    }
+}
+
+if(tipoVeiculos == 2){
+    if(kmPercorrido <= 200){
+        console.log(`Valor total do aluguel: R$${carroLuxoCurtaDistancia(diasDeAluguel, kmPercorrido).toFixed(2)}`)
+    }else{ 
+        console.log(`Valor total do aluguel: R$${carroLuxoLongaDistancia(diasDeAluguel, kmPercorrido).toFixed(2)}`)
+    }
+}
