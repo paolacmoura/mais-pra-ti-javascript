@@ -359,7 +359,7 @@ console.log(`A soma da progressão: ${soma}`);
 function sequenciaFibonacci() {
     let num1 = 0; 
     let num2 = 1;
-    
+
     console.log("Os 10 primeiros números da sequência de Fibonacci são:");
 
     for(let i = 0; i < 10; i++) {
@@ -373,3 +373,22 @@ function sequenciaFibonacci() {
 sequenciaFibonacci();
 
 
+/*
+    Crie um programa que preencha automaticamente (usando lógica, não apenas
+    atribuindo diretamente) um vetor numérico com 15 posições com os primeiros elementos
+    da sequência de Fibonacci.
+*/
+
+
+let num1 = 0;
+let num2 = 1;
+let vetor = [];
+
+for(let i = 0; i < 15; i++) {
+    vetor.push(num1);
+    let temp = num1;
+    num1 += num2;
+    num2 = temp;
+}
+
+console.log(vetor);
