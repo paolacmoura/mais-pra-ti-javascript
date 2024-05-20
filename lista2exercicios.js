@@ -348,3 +348,28 @@ for(let i = 1; i < 10; i++){
 }
 
 console.log(`A soma da progressão: ${soma}`);
+
+
+/*
+    Faça um programa que mostre os 10 primeiros elementos da Sequência de Fibonacci.
+    Ex.: 1, 1, 2, 3, 5, 8, 13, 21.
+*/
+
+
+function sequenciaFibonacci() {
+    let num1 = 0; 
+    let num2 = 1;
+    
+    console.log("Os 10 primeiros números da sequência de Fibonacci são:");
+
+    for(let i = 0; i < 10; i++) {
+        console.log(num1);
+        let temp = num1;
+        num1 += num2;
+        num2 = temp;
+    }
+}
+
+sequenciaFibonacci();
+
+
