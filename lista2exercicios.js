@@ -257,6 +257,7 @@ if(horasAtividadesRealizadas >= 20){
     funcionário.
 */
 
+
 let sexo;
 let salarioFeminino = 0;
 let salarioMasculino = 0;
@@ -279,3 +280,47 @@ do{
 
 console.log(`O gasto com salários masculinos é de R$${salarioMasculino.toFixed(2)}\nO gasto com salários femininos é de R$${salarioFeminino.toFixed(2)}`)
 
+
+/* 
+    Crie um programa usando a estrutura “faça enquanto” que leia vários números. A
+    cada laço, pergunte se o usuário quer continuar ou não. No final, mostre na tela:
+    a) O somatório entre todos os valores;
+    b) Qual foi o menor valor digitado;
+    c) A média entre todos os valores;
+    d) Quantos valores são pares.
+*/
+
+
+let numero;
+let soma = 0;
+let menorValor = 0;
+let i = 0;
+let quantidadePares = 0;
+let desejaContinuar;
+
+do{
+    numero = parseFloat(prompt(" Digite um número: "));
+    soma += numero;
+
+    if(menorValor === 0){
+        menorValor = numero;
+    }
+
+    if(numero < menorValor){
+        menorValor = numero;
+    }
+
+    i++;
+
+    if(numero % 2 === 0){
+        quantidadePares++;
+    }
+
+    desejaContinuar = prompt("Deseja continuar? S ou N ");
+
+} while(["S", "s"].includes(desejaContinuar))
+
+console.log(`A soma dos números digitados é:${soma}`);
+console.log(`O menor valor digitado foi:${menorValor}`);
+console.log(`A média dos valores digitados foi de:${soma/i}`);
+console.log(`A quantidade de numeros pares digitados é: ${quantidadePares}`);
