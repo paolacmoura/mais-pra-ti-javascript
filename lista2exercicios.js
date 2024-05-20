@@ -248,3 +248,34 @@ if(horasAtividadesRealizadas >= 20){
     console.log(`Você atingiu ${pontosNivelTres(horasAtividadesRealizadas)} pontos`)
     console.log(`Você ganhou R$${calculaNivelTres(horasAtividadesRealizadas).toFixed(2)}`)
 }
+
+
+/*
+    Desenvolva um aplicativo que leia o salário e o sexo de vários funcionários. No final,
+    mostre o total de salário pago aos homens e o total pago às mulheres. O programa vai
+    perguntar ao usuário se ele quer continuar ou não sempre que ler os dados de um
+    funcionário.
+*/
+
+let sexo;
+let salarioFeminino = 0;
+let salarioMasculino = 0;
+let desejaContinuar;
+
+do{
+    sexo = prompt("Digite o sexo do funcionário: M = Masculino ou F = Feminino ")
+
+    if(["M", "m"].includes(sexo)){
+        salarioMasculino += parseFloat(prompt("Informe o salario(R$): "))    
+    }
+
+    if(["F", "f"].includes(sexo)){
+        salarioFeminino += parseFloat(prompt("Informe o salario(R$): "))
+    }
+
+    desejaContinuar = prompt("Deseja continuar? S ou N ")
+
+} while(["S", "s"].includes(desejaContinuar))
+
+console.log(`O gasto com salários masculinos é de R$${salarioMasculino.toFixed(2)}\nO gasto com salários femininos é de R$${salarioFeminino.toFixed(2)}`)
+
