@@ -324,3 +324,27 @@ console.log(`A soma dos números digitados é:${soma}`);
 console.log(`O menor valor digitado foi:${menorValor}`);
 console.log(`A média dos valores digitados foi de:${soma/i}`);
 console.log(`A quantidade de numeros pares digitados é: ${quantidadePares}`);
+
+
+/*
+    Desenvolva um programa que leia o primeiro termo e a razão de uma PA (Progressão
+    Aritmética), mostrando na tela os 10 primeiros elementos da PA e a soma entre todos os
+    valores da sequência.
+*/
+
+
+let primeiroTermo = parseInt(prompt("Insira um valor para o termo da PA: "));
+let razao = parseInt(prompt("Insira um valor para razão da PA: "));
+let soma = 0;
+let progressao = primeiroTermo;
+
+console.log(primeiroTermo);
+
+for(let i = 1; i < 10; i++){
+    progressao += razao;
+
+    soma += progressao;
+    console.log(progressao);
+}
+
+console.log(`A soma da progressão: ${soma}`);
