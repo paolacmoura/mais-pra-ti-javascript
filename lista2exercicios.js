@@ -409,3 +409,28 @@ for(let i = 0; i < 7; i++) {
 for(let i = vetor.length - 1; i >= 0; i--) {
     console.log(vetor[i]);
 }
+
+
+/*
+    Desenvolva um programa que leia 10 números inteiros e guarde-os em um vetor. No
+    final, mostre quais são os números pares que foram digitados e em que posições eles
+    estão armazenados.
+*/
+
+
+let vetor = [];
+let numero;
+let meusPares = [];
+
+for(let i = 0; i < 10; i++){
+    numero = parseInt(prompt("Insira um numero: "));
+    vetor.push(numero);
+
+    if(numero % 2 === 0){
+        meusPares.push({valor: numero, posicao: i});
+    }
+} 
+
+for(let obj of meusPares){
+    console.log(`Na posição ${obj.posicao}, o valor par digitado foi ${obj.valor}`);
+}
