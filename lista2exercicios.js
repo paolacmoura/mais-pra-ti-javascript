@@ -483,3 +483,29 @@ for(let i = 0; i < vetorIdade.length; i++){
         console.log(`${vetorNome[i]} é menor de idade, sua idade é ${vetorIdade[i]} anos.`);
     }
 }
+
+/*
+    Crie um registro com o nome do funcionário, cargo e salário. Leia este registro para
+    um funcionário e ao final escreva o conteúdo do registro.
+*/
+
+
+let funcionario = {
+    nome: "",
+    cargo: "",
+    salario: 0.0
+}
+
+let nome = prompt("Insira o nome do funcionário: ");
+let cargo = prompt("Insira o cargo: ");
+let salario = prompt("Insira o salário: ");
+
+funcionario.nome = nome;
+funcionario.cargo = cargo;
+funcionario.salario = salario;
+
+console.log("Registro de funcionario cadastrado:");
+
+for(let item in funcionario){
+    console.log(`${item}: ${funcionario[item]}`);
+}
