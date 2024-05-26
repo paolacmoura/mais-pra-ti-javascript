@@ -457,3 +457,29 @@ vetor.sort((a, b) => a - b);
 
 console.log("Números ordenados:");
 console.log(vetor);
+
+
+/*
+    Crie um programa que leia o nome e a idade de 9 pessoas e guarde esses valores em
+    dois vetores, em posições relacionadas. No final, mostre uma listagem contendo apenas
+    os dados das pessoas menores de idade.
+*/
+
+
+let vetorNome = [];
+let vetorIdade = [];
+let nome;
+let idade;
+
+for (let i = 0; i < 10; i++) {
+    nome = prompt("Digite um nome: ");
+    idade = parseInt(prompt("Insira a idade: "));
+    vetorNome.push(nome);
+    vetorIdade.push(idade);
+}
+
+for(let i = 0; i < vetorIdade.length; i++){
+    if(vetorIdade[i] < 18){
+        console.log(`${vetorNome[i]} é menor de idade, sua idade é ${vetorIdade[i]} anos.`);
+    }
+}
