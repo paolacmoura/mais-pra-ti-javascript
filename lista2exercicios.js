@@ -509,3 +509,29 @@ console.log("Registro de funcionario cadastrado:");
 for(let item in funcionario){
     console.log(`${item}: ${funcionario[item]}`);
 }
+
+
+/*
+    Escrever um programa para ler 5 horários. Validar cada horário fornecendo através de
+    repetição. Escrever cada um deles no formato HH.MM.SS.
+*/
+
+
+let horarios = [];
+let horario;
+const regex = /^(0[0-9]|1[0-9]|2[0-3])\.[0-5][0-9]\.[0-5][0-9]$/;
+
+while(horarios.length !== 5){
+    horario = prompt("Insira um horário no formato HH.MM.SS ");
+
+    if(regex.test(horario)){
+        horarios.push(horario);
+    } else {
+        console.log("O horário inserido não corresponde ao padrão esperado");
+    }
+}
+
+console.log('Horários inseridos:');
+for(let horario of horarios){
+    console.log(horario);
+}
