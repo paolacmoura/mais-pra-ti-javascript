@@ -669,3 +669,59 @@ let altura = parseFloat(prompt("Insira altura(ex:1.50): "));
 let sexo = prompt("Insira o sexo (M/F): ");
 
 console.log(`O peso ideal é: ${calculaPesoIdeal(altura,sexo)}Kg`);
+
+/*
+    A prefeitura de uma cidade fez uma pesquisa entre os seus habitantes, coletando
+    dados sobre o salário e número de filhos. Faça uma função que leia esses dados para um
+    número não determinado de pessoas e retorne a média de salário da população, a
+    média do número de filhos, o maior salário e o percentual de pessoas com salário até R$
+    350,00.
+*/
+
+const pesquisaHabitantes = [
+    { salario: 1000.50, numeroFilhos: 2 },
+    { salario: 1100.75, numeroFilhos: 1 },
+    { salario: 1200.00, numeroFilhos: 3 },
+    { salario: 1300.25, numeroFilhos: 0 },
+    { salario: 1000.50, numeroFilhos: 2 },
+    { salario: 1100.75, numeroFilhos: 1 },
+    { salario: 1200.00, numeroFilhos: 3 },
+    { salario: 1400.50, numeroFilhos: 4 },
+    { salario: 1500.75, numeroFilhos: 2 },
+    { salario: 300.00, numeroFilhos: 1 },
+    { salario: 1700.25, numeroFilhos: 3 },
+    { salario: 250.50, numeroFilhos: 0 },
+    { salario: 1900.75, numeroFilhos: 2 },
+];
+
+let somaSalarios = 0;
+let mediaSalarios;
+let somaFilhos = 0;
+let mediaFilhos;
+let maiorSalario = 0;
+let contSalarioAte350 = 0;
+
+function calculaPesquisa(pesquisa){
+    for(let habitante of pesquisa){
+        somaSalarios += habitante.salario;
+        somaFilhos += habitante.numeroFilhos;
+
+        if (habitante.salario > maiorSalario){
+            maiorSalario = habitante.salario;
+        }
+        if(habitante.salario <= 350){
+            contSalarioAte350++;
+        }
+    }
+    mediaSalarios = somaSalarios / pesquisa.length;
+    mediaFilhos = somaFilhos / pesquisa.length;
+    
+    console.log(`Média de salários dos habitantes: R$${mediaSalarios.toFixed(2)}`);
+    console.log(`Média do número de filhos: ${mediaFilhos.toFixed(2)}`);
+    console.log(`Maior salário: R$${maiorSalario.toFixed(2)}`);
+    console.log(`Percentual de habitantes com salários até R$350.00: ${((contSalarioAte350 / pesquisa.length) * 100).toFixed(2)}%`);
+}
+
+calculaPesquisa(pesquisaHabitantes);
+
+
