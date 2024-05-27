@@ -647,3 +647,25 @@ for(let funcionario of tabelaFuncionarios){
 
     console.log('-----------------------------------');
 }
+
+/*
+    Faça uma função que recebe, por parâmetro, a altura (alt) e o sexo de uma pessoa e
+    retorna o seu peso ideal. Para homens, calcular o peso ideal usando a fórmula: peso ideal
+    = 72.7 x alt - 58 e, para mulheres, peso ideal = 62.1 x alt - 44.7.
+*/
+
+
+function calculaPesoIdeal(altura, sexo){
+    if(sexo == "M" || sexo == "m"){
+        return (72.7 * altura - 58).toFixed(2)
+    } else if(sexo == "F" || sexo == "f"){
+        return (62.1 * altura - 44.7).toFixed(2)
+    } else {
+        console.log("Dados inválidos")
+    }
+}
+
+let altura = parseFloat(prompt("Insira altura(ex:1.50): "));
+let sexo = prompt("Insira o sexo (M/F): ");
+
+console.log(`O peso ideal é: ${calculaPesoIdeal(altura,sexo)}Kg`);
