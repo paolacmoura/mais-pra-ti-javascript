@@ -535,3 +535,115 @@ console.log('Horários inseridos:');
 for(let horario of horarios){
     console.log(horario);
 }
+
+
+/*
+    Uma indústria faz a folha mensal de pagamentos de seus 80 empregados baseada
+    no seguinte: existe uma tabela com os dados de cada funcionalidade: matrícula, nome e
+    salário bruto. Escreva um programa que leia e processe a tabela e emita (escreva na
+    tela), cada funcionário, seu contracheque, cujo formato é dado a seguir:
+    Matrícula:
+    Nome:
+    Salário bruto:
+    Dedução INSS:
+    Salário líquido:
+    (Dicas: desconto de 12%, salário líquido é a diferença entre salário bruto e a redução do
+    INSS).
+*/
+
+
+let deducao = 0;
+const tabelaFuncionarios = [
+    { matricula: 1, nome: 'Joao', salarioBruto: 1500.0 },
+    { matricula: 2, nome: 'Maria', salarioBruto: 1550.0 },
+    { matricula: 3, nome: 'Pedro', salarioBruto: 1600.0 },
+    { matricula: 4, nome: 'Ana', salarioBruto: 1650.0 },
+    { matricula: 5, nome: 'Carlos', salarioBruto: 1700.0 },
+    { matricula: 6, nome: 'Fernanda', salarioBruto: 1750.0 },
+    { matricula: 7, nome: 'Luis', salarioBruto: 1800.0 },
+    { matricula: 8, nome: 'Paula', salarioBruto: 1850.0 },
+    { matricula: 9, nome: 'Rafael', salarioBruto: 1900.0 },
+    { matricula: 10, nome: 'Clara', salarioBruto: 1950.0 },
+    { matricula: 11, nome: 'Joao', salarioBruto: 2000.0 },
+    { matricula: 12, nome: 'Maria', salarioBruto: 2050.0 },
+    { matricula: 13, nome: 'Pedro', salarioBruto: 2100.0 },
+    { matricula: 14, nome: 'Ana', salarioBruto: 2150.0 },
+    { matricula: 15, nome: 'Carlos', salarioBruto: 2200.0 },
+    { matricula: 16, nome: 'Fernanda', salarioBruto: 2250.0 },
+    { matricula: 17, nome: 'Luis', salarioBruto: 2300.0 },
+    { matricula: 18, nome: 'Paula', salarioBruto: 2350.0 },
+    { matricula: 19, nome: 'Rafael', salarioBruto: 2400.0 },
+    { matricula: 20, nome: 'Clara', salarioBruto: 2450.0 },
+    { matricula: 21, nome: 'Joao', salarioBruto: 2500.0 },
+    { matricula: 22, nome: 'Maria', salarioBruto: 2550.0 },
+    { matricula: 23, nome: 'Pedro', salarioBruto: 2600.0 },
+    { matricula: 24, nome: 'Ana', salarioBruto: 2650.0 },
+    { matricula: 25, nome: 'Carlos', salarioBruto: 2700.0 },
+    { matricula: 26, nome: 'Fernanda', salarioBruto: 2750.0 },
+    { matricula: 27, nome: 'Luis', salarioBruto: 2800.0 },
+    { matricula: 28, nome: 'Paula', salarioBruto: 2850.0 },
+    { matricula: 29, nome: 'Rafael', salarioBruto: 2900.0 },
+    { matricula: 30, nome: 'Clara', salarioBruto: 2950.0 },
+    { matricula: 31, nome: 'Joao', salarioBruto: 3000.0 },
+    { matricula: 32, nome: 'Maria', salarioBruto: 3050.0 },
+    { matricula: 33, nome: 'Pedro', salarioBruto: 3100.0 },
+    { matricula: 34, nome: 'Ana', salarioBruto: 3150.0 },
+    { matricula: 35, nome: 'Carlos', salarioBruto: 3200.0 },
+    { matricula: 36, nome: 'Fernanda', salarioBruto: 3250.0 },
+    { matricula: 37, nome: 'Luis', salarioBruto: 3300.0 },
+    { matricula: 38, nome: 'Paula', salarioBruto: 3350.0 },
+    { matricula: 39, nome: 'Rafael', salarioBruto: 3400.0 },
+    { matricula: 40, nome: 'Clara', salarioBruto: 3450.0 },
+    { matricula: 41, nome: 'Joao', salarioBruto: 3500.0 },
+    { matricula: 42, nome: 'Maria', salarioBruto: 3550.0 },
+    { matricula: 43, nome: 'Pedro', salarioBruto: 3600.0 },
+    { matricula: 44, nome: 'Ana', salarioBruto: 3650.0 },
+    { matricula: 45, nome: 'Carlos', salarioBruto: 3700.0 },
+    { matricula: 46, nome: 'Fernanda', salarioBruto: 3750.0 },
+    { matricula: 47, nome: 'Luis', salarioBruto: 3800.0 },
+    { matricula: 48, nome: 'Paula', salarioBruto: 3850.0 },
+    { matricula: 49, nome: 'Rafael', salarioBruto: 3900.0 },
+    { matricula: 50, nome: 'Clara', salarioBruto: 3950.0 },
+    { matricula: 51, nome: 'Joao', salarioBruto: 4000.0 },
+    { matricula: 52, nome: 'Maria', salarioBruto: 4050.0 },
+    { matricula: 53, nome: 'Pedro', salarioBruto: 4100.0 },
+    { matricula: 54, nome: 'Ana', salarioBruto: 4150.0 },
+    { matricula: 55, nome: 'Carlos', salarioBruto: 4200.0 },
+    { matricula: 56, nome: 'Fernanda', salarioBruto: 4250.0 },
+    { matricula: 57, nome: 'Luis', salarioBruto: 4300.0 },
+    { matricula: 58, nome: 'Paula', salarioBruto: 4350.0 },
+    { matricula: 59, nome: 'Rafael', salarioBruto: 4400.0 },
+    { matricula: 60, nome: 'Clara', salarioBruto: 4450.0 },
+    { matricula: 61, nome: 'Joao', salarioBruto: 4500.0 },
+    { matricula: 62, nome: 'Maria', salarioBruto: 4550.0 },
+    { matricula: 63, nome: 'Pedro', salarioBruto: 4600.0 },
+    { matricula: 64, nome: 'Ana', salarioBruto: 4650.0 },
+    { matricula: 65, nome: 'Carlos', salarioBruto: 4700.0 },
+    { matricula: 66, nome: 'Fernanda', salarioBruto: 4750.0 },
+    { matricula: 67, nome: 'Luis', salarioBruto: 4800.0 },
+    { matricula: 68, nome: 'Paula', salarioBruto: 4850.0 },
+    { matricula: 69, nome: 'Rafael', salarioBruto: 4900.0 },
+    { matricula: 70, nome: 'Clara', salarioBruto: 4950.0 },
+    { matricula: 71, nome: 'Joao', salarioBruto: 5000.0 },
+    { matricula: 72, nome: 'Maria', salarioBruto: 5050.0 },
+    { matricula: 73, nome: 'Pedro', salarioBruto: 5100.0 },
+    { matricula: 74, nome: 'Ana', salarioBruto: 5150.0 },
+    { matricula: 75, nome: 'Carlos', salarioBruto: 5200.0 },
+    { matricula: 76, nome: 'Fernanda', salarioBruto: 5250.0 },
+    { matricula: 77, nome: 'Luis', salarioBruto: 5300.0 },
+    { matricula: 78, nome: 'Paula', salarioBruto: 5350.0 },
+    { matricula: 79, nome: 'Rafael', salarioBruto: 5400.0 },
+    { matricula: 80, nome: 'Clara', salarioBruto: 5450.0 },
+];
+
+for(let funcionario of tabelaFuncionarios){
+    deducao = funcionario.salarioBruto * 0.12;
+
+    console.log(`Matricula: ${funcionario.matricula}`);
+    console.log(`Nome: ${funcionario.nome}`);
+    console.log(`Salário bruto: R$${funcionario.salarioBruto.toFixed(2)}`);
+    console.log(`Dedução INSS: R$${deducao.toFixed(2)}`);
+    console.log(`Salário líquido: R$${(funcionario.salarioBruto - deducao).toFixed(2)}`);
+
+    console.log('-----------------------------------');
+}
